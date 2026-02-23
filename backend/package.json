@@ -1,0 +1,36 @@
+{
+  "name": "phonebook-backend",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Augusto Moran",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "start:test": "cross-env NODE_ENV=test node index.js",
+    "build:ui": "powershell -Command \"Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue; Push-Location ../frontend; npm run build; Pop-Location; Copy-Item -Recurse -Force ../frontend/dist ./dist\"",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",
+    "logs:prod": "fly logs",
+    "test": "cross-env NODE_ENV=test node --test --test-concurrency=1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.2",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2"
+  }
+}

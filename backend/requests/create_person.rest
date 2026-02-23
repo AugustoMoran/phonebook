@@ -1,0 +1,33 @@
+### Create a new person
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Person",
+  "number": "123-456-7890"
+}
+
+### Create person without name (should fail)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "123-456-7890"
+}
+
+### Create person without number (should fail)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Person"
+}
+
+### Create duplicate name (should fail)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "999-999-9999"
+}

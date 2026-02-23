@@ -1,0 +1,26 @@
+### Test validation - nombre muy corto (debe fallar)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Ab",
+  "number": "12345678"
+}
+
+### Test validation - número muy corto (debe fallar)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Juan Perez",
+  "number": "123"
+}
+
+### Test validation - ambos válidos (debe funcionar)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Maria Garcia",
+  "number": "12345678"
+}

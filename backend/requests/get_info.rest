@@ -1,0 +1,2 @@
+### Get phonebook info
+GET http://localhost:3001/info

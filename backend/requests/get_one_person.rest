@@ -1,0 +1,5 @@
+### Get single person
+GET http://localhost:3001/api/persons/1
+
+### Get non-existent person (should return 404)
+GET http://localhost:3001/api/persons/999

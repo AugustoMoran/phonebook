@@ -1,0 +1,42 @@
+# Pruebas para depuración
+# Puedes ejecutar estas pruebas paso por paso para ver la depuración en acción
+
+### Test 1: Crear una persona exitosamente ✅
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Test Person",
+  "number": "555-1234"
+}
+
+###
+
+### Test 2: Intentar crear sin nombre (debe fallar) ❌
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "555-9999"
+}
+
+###
+
+### Test 3: Intentar crear sin número (debe fallar) ❌
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "No Number Person"
+}
+
+###
+
+### Test 4: Intentar crear nombre duplicado (debe fallar) ❌
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "999-8888"
+}
